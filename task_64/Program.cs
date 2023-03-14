@@ -13,8 +13,12 @@ int Prompt(string massage)
 string NaturalNumber(int n)
 {
     if (n >= 1) return $"{n} " + NaturalNumber(n - 1);
-    else return $"Введите число больше нуля ";
+    else return String.Empty;
 }
-int n = Prompt("Введите значение N:  ");
-Console.WriteLine(NaturalNumber(n));
+bool Check(int n)
+{
+return n > 0;
+}
 
+int n = Prompt("Введите значение N:  ");
+Console.WriteLine(Check(n) ? NaturalNumber(n) : "Введите число больше нуля");
